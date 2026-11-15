@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cg2gtsn33lbdn"]
+
+[ext_resource type="Script" uid="uid://mvyily13xape" path="res://scripts/oldman.gd" id="1_w7ey8"]
+[ext_resource type="Texture2D" uid="uid://bq3pjhcxldvcm" path="res://assets/old man.png" id="2_36wtb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3v31"]
+atlas = ExtResource("2_36wtb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5qhs"]
+atlas = ExtResource("2_36wtb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldxs4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3v31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5qhs")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="oldman" type="Node2D" unique_id=893590758]
+script = ExtResource("1_w7ey8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=850192169]
+position = Vector2(16.500002, -15.500003)
+scale = Vector2(2.03125, 1.9687499)
+sprite_frames = SubResource("SpriteFrames_ldxs4")
+speed_scale = 0.7

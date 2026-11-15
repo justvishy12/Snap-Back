@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://culxsq424elww"]
+
+[ext_resource type="Script" uid="uid://bv3ip0c0dw7e6" path="res://scripts/trampoline.gd" id="1_nytqh"]
+[ext_resource type="Texture2D" uid="uid://h02lt65056x0" path="res://assets/tramplineanimation.png" id="2_1ne3y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gay0"]
+atlas = ExtResource("2_1ne3y")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64cc3"]
+atlas = ExtResource("2_1ne3y")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqe70"]
+atlas = ExtResource("2_1ne3y")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldxs4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gay0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64cc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqe70")
+}],
+"loop": 0,
+"name": &"bounce",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldxs4"]
+size = Vector2(3, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kpj8"]
+size = Vector2(3, 12)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0kpj8"]
+height = 48.0
+
+[node name="Trampoline" type="Node2D" unique_id=100869423]
+script = ExtResource("1_nytqh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=261081644]
+sprite_frames = SubResource("SpriteFrames_ldxs4")
+animation = &"bounce"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=627839340]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1588632972]
+position = Vector2(-25.5, 10)
+shape = SubResource("RectangleShape2D_ldxs4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1017496929]
+position = Vector2(25.5, 10)
+shape = SubResource("RectangleShape2D_0kpj8")
+
+[node name="Jump" type="Area2D" parent="." unique_id=435063469]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jump" unique_id=1667196475]
+position = Vector2(0, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_0kpj8")
+
+[connection signal="body_entered" from="Jump" to="." method="_on_jump_body_entered"]

@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://d4i8fw2on6smp"]
+
+[ext_resource type="Script" uid="uid://c188llgrt1d4b" path="res://scripts/home.gd" id="1_mahjx"]
+[ext_resource type="Texture2D" uid="uid://p60j4go4qdsc" path="res://assets/sky.png" id="1_w18ys"]
+[ext_resource type="Texture2D" uid="uid://crtydp0fwms1v" path="res://assets/tilemap lvl1.png" id="2_reixx"]
+[ext_resource type="Texture2D" uid="uid://chi14c703arae" path="res://assets/clouds.png" id="3_uhids"]
+[ext_resource type="Texture2D" uid="uid://bs0qkaaah24ft" path="res://assets/PlayerForward.png" id="5_4fycn"]
+[ext_resource type="PackedScene" uid="uid://cg2gtsn33lbdn" path="res://scenes/oldman.tscn" id="6_vc333"]
+[ext_resource type="FontFile" uid="uid://djapn84mysw1g" path="res://fonts/static/PixelifySans-Bold.ttf" id="7_hhep5"]
+[ext_resource type="FontFile" uid="uid://bdjou1lhw6gwi" path="res://fonts/static/PixelifySans-Medium.ttf" id="9_hhep5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fycn"]
+texture = ExtResource("2_reixx")
+0:0/0 = 0
+1:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ldxs4"]
+sources/0 = SubResource("TileSetAtlasSource_4fycn")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmjdo"]
+atlas = ExtResource("5_4fycn")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu5fn"]
+atlas = ExtResource("5_4fycn")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldxs4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmjdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu5fn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=340026494]
+script = ExtResource("1_mahjx")
+
+[node name="Sky" type="Sprite2D" parent="." unique_id=1392347927]
+position = Vector2(591.5, 178)
+scale = Vector2(0.7636719, 0.63671875)
+texture = ExtResource("1_w18ys")
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1928097943]
+tile_set = SubResource("TileSet_ldxs4")
+format = 2
+layer_0/tile_data = PackedInt32Array(1245209, 0, 7, 1310745, 0, 8, 1245210, 65536, 7, 1310746, 65536, 8, 1245231, 0, 7, 1310767, 0, 8, 1245232, 65536, 7, 1310768, 65536, 8, 1245214, 0, 7, 1310750, 0, 8, 1245215, 65536, 7, 1310751, 65536, 8, 1245224, 0, 7, 1310760, 0, 8, 1245225, 65536, 7, 1310761, 65536, 8, 1245218, 0, 7, 1310754, 0, 8, 1245219, 65536, 7, 1310755, 65536, 8, 1245228, 0, 7, 1310764, 0, 8, 1245229, 65536, 7, 1310765, 65536, 8, 1245211, 524288, 4, 1310747, 524288, 5, 1245212, 589824, 4, 1310748, 589824, 5, 1245216, 524288, 4, 1310752, 524288, 5, 1245217, 589824, 4, 1310753, 589824, 5, 1245220, 524288, 4, 1310756, 524288, 5, 1245221, 589824, 4, 1310757, 589824, 5, 1245226, 524288, 4, 1310762, 524288, 5, 1245227, 589824, 4, 1310763, 589824, 5, 1245222, 65536, 8, 1310759, 65536, 8, 1310758, 589824, 4, 1245223, 589824, 4, 1245230, 589824, 4, 1310766, 524288, 4, 1310749, 65536, 8, 1245213, 0, 7, 1114137, 0, 4, 1179673, 0, 5, 1114138, 65536, 4, 1179674, 65536, 5, 1114144, 0, 4, 1179680, 0, 5, 1114145, 65536, 4, 1179681, 65536, 5, 1114151, 65536, 4, 1179687, 0, 5, 1114152, 65536, 4, 1179688, 65536, 5, 1114159, 0, 4, 1179695, 0, 5, 1114160, 65536, 4, 1179696, 65536, 5, 1114141, 262144, 4, 1179677, 262144, 5, 1114142, 327680, 4, 1179678, 327680, 5, 1114148, 262144, 4, 1179684, 262144, 5, 1114149, 327680, 4, 1179685, 327680, 5, 1114155, 262144, 4, 1179691, 262144, 5, 1114156, 327680, 4, 1179692, 327680, 5, 1114139, 0, 4, 1114140, 65536, 4, 1114146, 0, 4, 1114147, 65536, 4, 1114150, 0, 4, 1114153, 0, 4, 1114154, 65536, 4, 1114157, 0, 4, 1114158, 65536, 4, 1179675, 262144, 5, 1179679, 262144, 5, 1179682, 262144, 5, 1179689, 262144, 5, 1179694, 262144, 5, 1179686, 65536, 5, 1179683, 65536, 5, 1179676, 65536, 5, 1179690, 65536, 5, 1179693, 65536, 5, 1114143, 262144, 4, 983065, 0, 0, 1048601, 0, 1, 983066, 65536, 0, 1048602, 786432, 1, 983071, 0, 268435456, 983070, 65536, 268435456, 1048607, 0, 268435457, 1048606, 786432, 1, 983076, 65536, 0, 983075, 0, 0, 1048612, 786432, 1, 1048611, 0, 1, 983081, 0, 268435456, 983080, 65536, 268435456, 1048617, 786432, 1, 1048616, 65536, 268435457, 983085, 65536, 0, 983084, 0, 0, 1048621, 786432, 1, 1048620, 0, 1, 983067, 524288, 0, 1048603, 524288, 1, 983068, 589824, 0, 1048604, 786432, 1, 983072, 524288, 0, 1048608, 786432, 1, 983073, 589824, 0, 1048609, 589824, 1, 983077, 524288, 0, 1048613, 524288, 1, 983078, 589824, 0, 1048614, 589824, 1, 983082, 524288, 0, 1048618, 524288, 1, 983083, 589824, 0, 1048619, 786432, 1, 983086, 524288, 0, 1048622, 524288, 1, 983087, 589824, 0, 1048623, 786432, 1, 983088, 524288, 0, 983079, 524288, 0, 983074, 524288, 0, 983069, 524288, 0, 1048605, 589824, 1, 1048624, 589824, 1, 1048615, 524288, 1, 1048610, 524288, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1388167832]
+position = Vector2(592, 219)
+zoom = Vector2(3, 3)
+
+[node name="Clouds" type="Sprite2D" parent="." unique_id=755307754]
+position = Vector2(586, 182)
+scale = Vector2(0.66796875, 0.66796875)
+texture = ExtResource("3_uhids")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=602557836]
+position = Vector2(708, 214)
+sprite_frames = SubResource("SpriteFrames_ldxs4")
+
+[node name="oldman" parent="." unique_id=893590758 instance=ExtResource("6_vc333")]
+position = Vector2(476, 243)
+
+[node name="Label" type="Label" parent="." unique_id=2094595853]
+offset_left = 512.0
+offset_top = 113.0
+offset_right = 845.0
+offset_bottom = 190.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("7_hhep5")
+theme_override_font_sizes/font_size = 64
+text = "Snap Back"
+
+[node name="Button" type="Button" parent="." unique_id=1515166723]
+offset_left = 565.0
+offset_top = 164.0
+offset_right = 684.0
+offset_bottom = 231.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("9_hhep5")
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="." unique_id=1082172333]
+offset_left = 538.0
+offset_top = 208.0
+offset_right = 759.0
+offset_bottom = 255.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("9_hhep5")
+theme_override_font_sizes/font_size = 32
+text = "INSTRUCTIONS"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

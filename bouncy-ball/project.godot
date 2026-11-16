@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bouncy Ball"
-run/main_scene="uid://cu85o1f2gicle"
+run/main_scene="uid://d4i8fw2on6smp"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

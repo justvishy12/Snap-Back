@@ -103,9 +103,9 @@ func _input(event):
 		$Player/Textbox/textlabel.visible_characters = $Player/Textbox/textlabel.text.length()
 
 func _ready() -> void:
+	update()
 	show_next_dialogue()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func update():
+	$Player/Label2.text = "Coins:" + str(Global.coins)+"/10"
+	$Player/Label.text = "Lives Left:" + str(Global.hearts)

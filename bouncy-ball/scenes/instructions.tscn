@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://lmlos4ctvnl"]
+
+[ext_resource type="Script" uid="uid://d06cgsasrl3wk" path="res://scripts/instructions.gd" id="1_r7su1"]
+[ext_resource type="Texture2D" uid="uid://p60j4go4qdsc" path="res://assets/sky.png" id="2_c6be6"]
+[ext_resource type="Texture2D" uid="uid://crtydp0fwms1v" path="res://assets/tilemap lvl1.png" id="3_i2hxp"]
+[ext_resource type="Texture2D" uid="uid://chi14c703arae" path="res://assets/clouds.png" id="4_2n4j6"]
+[ext_resource type="FontFile" uid="uid://bdjou1lhw6gwi" path="res://fonts/static/PixelifySans-Medium.ttf" id="5_olnwl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i5xgr"]
+texture = ExtResource("3_i2hxp")
+0:0/0 = 0
+1:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_jxpsd"]
+sources/0 = SubResource("TileSetAtlasSource_i5xgr")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldxs4"]
+bg_color = Color(0.1081635, 0.2584403, 0.29215074, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Node2D" type="Node2D" unique_id=654769854]
+script = ExtResource("1_r7su1")
+
+[node name="Sky" type="Sprite2D" parent="." unique_id=1698378537]
+position = Vector2(591.5, 178)
+scale = Vector2(0.7636719, 0.63671875)
+texture = ExtResource("2_c6be6")
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1744948974]
+tile_set = SubResource("TileSet_jxpsd")
+format = 2
+layer_0/tile_data = PackedInt32Array(1245209, 0, 7, 1310745, 0, 8, 1245210, 65536, 7, 1310746, 65536, 8, 1245231, 0, 7, 1310767, 0, 8, 1245232, 65536, 7, 1310768, 65536, 8, 1245214, 0, 7, 1310750, 0, 8, 1245215, 65536, 7, 1310751, 65536, 8, 1245224, 0, 7, 1310760, 0, 8, 1245225, 65536, 7, 1310761, 65536, 8, 1245218, 0, 7, 1310754, 0, 8, 1245219, 65536, 7, 1310755, 65536, 8, 1245228, 0, 7, 1310764, 0, 8, 1245229, 65536, 7, 1310765, 65536, 8, 1245211, 524288, 4, 1310747, 524288, 5, 1245212, 589824, 4, 1310748, 589824, 5, 1245216, 524288, 4, 1310752, 524288, 5, 1245217, 589824, 4, 1310753, 589824, 5, 1245220, 524288, 4, 1310756, 524288, 5, 1245221, 589824, 4, 1310757, 589824, 5, 1245226, 524288, 4, 1310762, 524288, 5, 1245227, 589824, 4, 1310763, 589824, 5, 1245222, 65536, 8, 1310759, 65536, 8, 1310758, 589824, 4, 1245223, 589824, 4, 1245230, 589824, 4, 1310766, 524288, 4, 1310749, 65536, 8, 1245213, 0, 7, 1114137, 0, 4, 1179673, 0, 5, 1114138, 65536, 4, 1179674, 65536, 5, 1114144, 0, 4, 1179680, 0, 5, 1114145, 65536, 4, 1179681, 65536, 5, 1114151, 65536, 4, 1179687, 0, 5, 1114152, 65536, 4, 1179688, 65536, 5, 1114159, 0, 4, 1179695, 0, 5, 1114160, 65536, 4, 1179696, 65536, 5, 1114141, 262144, 4, 1179677, 262144, 5, 1114142, 327680, 4, 1179678, 327680, 5, 1114148, 262144, 4, 1179684, 262144, 5, 1114149, 327680, 4, 1179685, 327680, 5, 1114155, 262144, 4, 1179691, 262144, 5, 1114156, 327680, 4, 1179692, 327680, 5, 1114139, 0, 4, 1114140, 65536, 4, 1114146, 0, 4, 1114147, 65536, 4, 1114150, 0, 4, 1114153, 0, 4, 1114154, 65536, 4, 1114157, 0, 4, 1114158, 65536, 4, 1179675, 262144, 5, 1179679, 262144, 5, 1179682, 262144, 5, 1179689, 262144, 5, 1179694, 262144, 5, 1179686, 65536, 5, 1179683, 65536, 5, 1179676, 65536, 5, 1179690, 65536, 5, 1179693, 65536, 5, 1114143, 262144, 4, 983065, 0, 0, 1048601, 0, 1, 983066, 65536, 0, 1048602, 786432, 1, 983071, 0, 268435456, 983070, 65536, 268435456, 1048607, 0, 268435457, 1048606, 786432, 1, 983076, 65536, 0, 983075, 0, 0, 1048612, 786432, 1, 1048611, 0, 1, 983081, 0, 268435456, 983080, 65536, 268435456, 1048617, 786432, 1, 1048616, 65536, 268435457, 983085, 65536, 0, 983084, 0, 0, 1048621, 786432, 1, 1048620, 0, 1, 983067, 524288, 0, 1048603, 524288, 1, 983068, 589824, 0, 1048604, 786432, 1, 983072, 524288, 0, 1048608, 786432, 1, 983073, 589824, 0, 1048609, 589824, 1, 983077, 524288, 0, 1048613, 524288, 1, 983078, 589824, 0, 1048614, 589824, 1, 983082, 524288, 0, 1048618, 524288, 1, 983083, 589824, 0, 1048619, 786432, 1, 983086, 524288, 0, 1048622, 524288, 1, 983087, 589824, 0, 1048623, 786432, 1, 983088, 524288, 0, 983079, 524288, 0, 983074, 524288, 0, 983069, 524288, 0, 1048605, 589824, 1, 1048624, 589824, 1, 1048615, 524288, 1, 1048610, 524288, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2130494691]
+position = Vector2(592, 219)
+zoom = Vector2(3, 3)
+
+[node name="Clouds" type="Sprite2D" parent="." unique_id=1074060895]
+position = Vector2(586, 182)
+scale = Vector2(0.66796875, 0.66796875)
+texture = ExtResource("4_2n4j6")
+
+[node name="Panel" type="Panel" parent="." unique_id=410158813]
+offset_left = 530.0
+offset_top = 137.0
+offset_right = 663.0
+offset_bottom = 278.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ldxs4")
+
+[node name="Label" type="Label" parent="." unique_id=1042861271]
+offset_left = 540.0
+offset_top = 141.0
+offset_right = 656.0
+offset_bottom = 164.0
+theme_override_fonts/font = ExtResource("5_olnwl")
+text = "INSTRUCTIONS"
+
+[node name="Label2" type="Label" parent="." unique_id=578529067]
+offset_left = 539.0
+offset_top = 171.0
+offset_right = 775.0
+offset_bottom = 375.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_olnwl")
+theme_override_font_sizes/font_size = 24
+text = "Collect all 10 coins, and avoid the globs to not die, and bounce back"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=614165251]
+offset_left = 685.0
+offset_top = 142.0
+offset_right = 765.0
+offset_bottom = 184.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 24
+text = "HOME"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

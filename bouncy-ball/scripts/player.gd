@@ -5,8 +5,10 @@ var idle_time = 0.0
 var gravity_scale = 1.0
 var last_facing = 1
 var not_pressing = 2
+@export var start_position : Vector2 
 
 func _ready() -> void:
+	global_position = start_position
 	$AnimatedSprite2d.play("default")
 
 func _physics_process(delta: float) -> void:
